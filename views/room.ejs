@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>video call application</title>
+    <script>
+      const ROOM_ID = "<%= roomId %>";
+      console.log(ROOM_ID);
+    </script>
+
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/808dc659da.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-left">
+        <div class="main-videos">
+          <div id="video-grid"></div>
+        </div>
+        <div class="main-control">
+          <div class="main-control-block">
+            <div class="main-control-button main-mute-button">
+              <i class="fa-solid fa-microphone"></i>
+              <span>Mute</span>
+            </div>
+            <div class="main-control-button main-video-button">
+              <i class="fa-solid fa-video"></i>
+              <span>stop video</span>
+            </div>
+          </div>
+          <div class="main-control-block">
+            <div class="main-control-button">
+              <i class="fa-solid fa-shield"></i>
+              <span>Security</span>
+            </div>
+            <div class="main-control-button">
+              <i class="fa-solid fa-user-group"></i>
+              <span>participant</span>
+            </div>
+            <div class="main-control-button">
+              <i class="fa-solid fa-comment"></i>
+              <span>chat</span>
+            </div>
+          </div>
+          <div class="main-control-block">
+            <div class="main-control-button">
+              <span class="leave-meeting">leave meeting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-right">
+        <div class="main-header">
+          <h6>chat room</h6>
+        </div>
+        <div class="main-chat-window">
+          <ul class="messages"></ul>
+        </div>
+        <div class="main-message-container">
+          <input
+            id="chat-message"
+            placeholder="type message here"
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
